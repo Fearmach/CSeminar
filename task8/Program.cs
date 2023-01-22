@@ -10,5 +10,5 @@ if (num1 % num2 == 0)
 }
 else
 {
-    System.Console.WriteLine($"{num1} не кратно {num2}");
+    System.Console.WriteLine($" число 1 не кратно числу 2, остаток от деления = {num1 % num2}");
 }
