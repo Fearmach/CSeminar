@@ -9,4 +9,4 @@ System.Console.WriteLine(randNumber);
 
 //System.Console.WriteLine($"{a/10}{b}");
 
-System.Console.WriteLine((randNumber/100) * 10 + randNumber%10);
+System.Console.WriteLine((randNumber/100) * 10 + randNumber%10 );
