@@ -36,7 +36,7 @@ int InputNumber(string message)
     while (true)
     {
         System.Console.WriteLine(message);
-        if (!(int.TryParse(Console.ReadLine(), out number)))
+        if (!(int.TryParse(Console.ReadLine(), out number))) // ! - значит (не). Делает из falsh - true и наоборот
         {
             System.Console.WriteLine("Введено не корректное число, попробуйте еще раз!");
         }
