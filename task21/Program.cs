@@ -16,11 +16,17 @@ void PrintArray(int[] arr) // ФУНКЦИЯ ВЫВОДА
     System.Console.WriteLine("[" + string.Join(", ", arr) + "]"); // string.Join Позволяет вывести все элементы массива например через (,  )
 }
 
-int[] array = FillArrayWithRandomNumbers(4, -9, 9);
-
-for (int i = 0; i < array.Length; i++)
+void ArrayChange (int[] array)
 {
+    for (int i = 0; i < array.Length; i++)
+{
+    System.Console.WriteLine(array[i]);
     array[i] = array[i] * (-1);
+
+}
 }
 
+int[] array = FillArrayWithRandomNumbers(4, -9, 9);
+
+ArrayChange(array);
 PrintArray(array);
