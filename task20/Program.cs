@@ -1,46 +1,43 @@
 ﻿// Задайте массив из 12 элементов, заполненный случайными числами из промежутка {-9 - 9}. Найдите сумму отрицательных и положительных элементов массива. в массиве (3, 9, -8, 1, 0, -7, 2, -1, 8, -3, -1, 6) сумма положительных = 29, отрицательных -20
 
-// int InputNumber(string str)
-//  {
-//      int number;
-//      string text;
-//      while(true)
-//      {
-//          System.Console.WriteLine(str);
-//          text = Console.ReadLine();
-         
-//          if (int.TryParse(text, out number))
-//          {
-//              break;
-//          }
-//          System.Console.WriteLine("Введено не корректное число, попробуйте еще раз!");
-//      }
-//      return number;
-// }
-
-int[] array = new int[12]; // СОЗДАЛИ МАССИВ И ВЫДЕЛИЛИ НА НЕГО ПАМЯТЬ
-Random rand = new Random();
-
-int sumPositive = 0;
-int sumNegative = 0;
-
-for (int i = 0; i < array.Length; i++)
+int[] FillArrayWithRandomNumbers(int size, int leftRange, int rightRange) // СОЗДАЛИ ФУНКЦИЮ ЗАПОЛНЕНИЯ МАССИВА
 {
-    array[i] = rand.Next(-9, 10);
+    int[] arr = new int[size]; // СОЗДАЛИ МАССИВ И ВЫДЕЛИЛИ НА НЕГО ПАМЯТЬ
+    Random rand = new Random(); // МЕТОД ЗАПОЛНЕНИЯ
+    for (int i = 0; i < arr.Length; i++)
+    {
+        arr[i] = rand.Next(leftRange, rightRange + 1);
+    }
+    return arr;
 }
 
-System.Console.WriteLine("["+string.Join(", ", array) + "]"); // string.Join Позволяет вывести все элементы массива например через (,  )
+void SumPositiveAndNegativeElements(int[] arr, out int sumP, out int sumN);
 
-for (int i = 0; i < array.Length; i++)
 {
-    if (array[i] > 0)
+    sumP = 0;
+    sumN = 0;
+    for (int i = 0; i < arr.Length; i++)
     {
-        sumPositive += array[i];
-    }
-    else
-    {
-        sumNegative += array[i];
+        if (arr[i] > 0)
+        {
+            sumP += arr[i];
+        }
+        else
+        {
+            sumN += arr[i];
+        }
     }
 }
 
-System.Console.WriteLine($"Сумма положительных чисел = {sumPositive}, Отрицательных = {sumNegative}");
+void PrintArray(int[] arr) // ФУНКЦИЯ ВЫВОДА
+{
+    System.Console.WriteLine("[" + string.Join(", ", arr) + "]"); // string.Join Позволяет вывести все элементы массива например через (,  )
+}
+
+int[] array = FillArrayWithRandomNumbers(6, -9, 9); // СОЗДАЛИ МАССИВ И ВЫДЕЛИЛИ НА НЕГО ПАМЯТЬ
+
+PrintArray(array);
+
+SumPositiveAndNegativeElements(array, out int sumP, out int sumN);
+
+System.Console.WriteLine($"Сумма положительных чисел = {sumP}, Отрицательных = {sumN}");
