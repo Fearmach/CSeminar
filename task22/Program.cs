@@ -16,9 +16,9 @@ void PrintArray(int[] arr)
     System.Console.WriteLine("[" + string.Join(", ", arr) + "]"); 
 }
 
-int InputNum()
+int InputNum(string text)
 {
-    System.Console.WriteLine("Введите число: ");
+    System.Console.WriteLine(text);
     int num = Convert.ToInt32(Convert.ToString(System.Console.ReadLine()));
     return num;
 }
@@ -37,7 +37,7 @@ bool CheckNum(int num, int[] array)
 
 int[] mass = FillArrayWithRandomNumbers(10, 0, 30);
 PrintArray(mass);
-int find = InputNum();
+int find = InputNum("Введите число: ");
 
 if(CheckNum(find, mass))
 {
