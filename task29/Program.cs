@@ -17,6 +17,8 @@ void PrintArray(int[] arr)
     System.Console.WriteLine("[" + string.Join(", ", arr) + "]");
 }
 
+// ВАРИАНТ БЕЗ ФУНКЦИИ
+
 // int[] array = FillArray(4, 0, 10);
 // PrintArray(array);
 
@@ -28,6 +30,8 @@ void PrintArray(int[] arr)
 // }
 
 // PrintArray(otherarray);
+
+// ВАРИАНТ С ФУНКЦИЕЙ
 
 int[] ArrayCopying(int[] array)
 {
@@ -43,3 +47,10 @@ int[] arr = FillArray(5, 0, 10);
 PrintArray(arr);
 int[] arr2 = ArrayCopying(arr);
 PrintArray(arr2);
+
+// ВАРИАНТ В 1 СТРОКУ (ТАКОЙ ВАРИАНТ НЕ СОХРАНЯЕТ 2-Й МАССИВ, ЕСЛИ МЕНЯТЬ ПЕРВЫЙ ПРИНУДИТЕЛЬНО, ИЗМЕНИТСЯ И 2-Й)
+
+// int[] arr = FillArray(5, 0, 10);
+// PrintArray(arr);
+// int[] arr2 = arr; 
+// PrintArray(arr2);
