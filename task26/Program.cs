@@ -10,19 +10,23 @@ int InputNum(string text)
 
 void PrintArray(int[] arr)
 {
-    System.Console.WriteLine("[" + string.Join(", ", arr) + "]"); 
+    System.Console.WriteLine("[" + string.Join(", ", arr) + "]");
 }
 
 int n1 = InputNum("Введите 1 число: ");
 int n2 = InputNum("Введите 2 число: ");
 int n3 = InputNum("Введите 3 число: ");
 
-if (n1 < n2 + n3 && n2 < n1 + n3 && n3 < n1 + n2)
-{ 
-    System.Console.WriteLine("Треугольник может существовать");
-}
-else
-{ 
-    System.Console.WriteLine("Треугольник существовать не может");
+void Check(int n1, int n2, int n3)
+{
+    if (n1 < n2 + n3 && n2 < n1 + n3 && n3 < n1 + n2)
+    {
+        System.Console.WriteLine("Треугольник может существовать");
+    }
+    else
+    {
+        System.Console.WriteLine("Треугольник существовать не может");
+    }
 }
 
+Check(n1, n2, n3);
