@@ -17,14 +17,29 @@ void PrintArray(int[] arr)
     System.Console.WriteLine("[" + string.Join(", ", arr) + "]");
 }
 
-int[] array = FillArray(4, 0, 10);
-PrintArray(array); 
+// int[] array = FillArray(4, 0, 10);
+// PrintArray(array);
 
-int[] otherarray = new int[4];
+// int[] otherarray = new int[4];
 
-for (int i = 0; i < array.Length; i++)
+// for (int i = 0; i < array.Length; i++)
+// {
+//     otherarray[i] = array[i];
+// }
+
+// PrintArray(otherarray);
+
+int[] ArrayCopying(int[] array)
 {
-    otherarray[i] = array[i];
+    int[] arraycopy = new int[array.Length];
+    for (int i = 0; i < arraycopy.Length; i++)
+    {
+        arraycopy[i] = array[i];
+    }
+    return arraycopy;
 }
 
-PrintArray(otherarray);
+int[] arr = FillArray(5, 0, 10);
+PrintArray(arr);
+int[] arr2 = ArrayCopying(arr);
+PrintArray(arr2);
