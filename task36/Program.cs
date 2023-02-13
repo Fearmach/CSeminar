@@ -48,3 +48,4 @@ for (int i = 0; i < result.Length; i++)
         System.Console.WriteLine($"{i} встречается {result[i]} раз");
     }
 }
+
